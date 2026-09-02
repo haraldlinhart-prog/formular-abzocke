@@ -1,0 +1,34 @@
+# formular-abzocke.de
+
+> formular-abzocke.de ist eine unabhängige Verbraucheraufklärungsseite über die "Formular-Abzocke"-Masche:
+> private Anbieter, die bei Google vor der echten Behördenseite erscheinen und für Behördengänge wie
+> Gewerbean- und -abmeldung eine Gebühr verlangen, die deutlich über der offiziellen Behördengebühr liegt —
+> teils ohne die zugesagte Leistung (Weiterleitung ans zuständige Amt) tatsächlich zu erbringen.
+
+## Kernfunktionen
+- Dokumentation konkreter, belegter Fälle (E-Mail-Verkehr, Zahlungsnachweise, Behördenbestätigungen)
+- Erklärung des generellen Musters und Erkennungsmerkmale unseriöser Formular-Anbieter
+- Konkrete Schritte zur Rückerstattung (PayPal-Käuferschutz, Kreditkarten-Chargeback, Widerruf)
+- Einordnung anhand öffentlicher Quellen (IHK München, Deutscher Schutzverband gegen Wirtschaftskriminalität e.V., WBS Legal)
+
+## Zielgruppe
+Verbraucher und Kleinunternehmer, die online nach Formularen für Behördengänge suchen (Gewerbeanmeldung,
+-abmeldung u. ä.) und Gefahr laufen, auf einer privaten, kostenpflichtigen Anbieterseite statt der echten
+Behördenseite zu landen.
+
+## Relevante Themen / Schlagworte
+Formular-Abzocke, Gewerbe online abmelden, Gewerbe-Online-Service, Behördenformular Kosten, Gewerbeamt
+Formular, Branchenbuch-Abzocke, Widerruf Verbraucherrecht, PayPal Käuferschutz, Chargeback Kreditkarte
+
+## Dokumentierte Fälle
+- Gewerbe-Online-Service.de / Phonemotion GmbH — Gewerbeabmeldung nicht weitergeleitet, 70 € über
+  PayPal-Käuferschutz zurückerstattet: https://formular-abzocke.de/faelle/phonemotion-gewerbe-online-service.html
+
+## Hinweis
+Diese Seite bietet keine Rechtsberatung. Betroffene Unternehmen können über das Kontaktformular eine
+Stellungnahme einreichen.
+
+## Links
+- Hauptseite: https://formular-abzocke.de
+- Kontakt: https://formular-abzocke.de/kontakt.html
+- Impressum: https://formular-abzocke.de/impressum.html
