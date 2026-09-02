@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt — formular-abzocke.de</title>
+<meta name="description" content="Kontakt zu formular-abzocke.de — für Hinweise auf weitere Fälle oder Stellungnahmen betroffener Unternehmen.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="/style.css">
+<link rel="canonical" href="https://formular-abzocke.de/kontakt.html">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 2 7v6c0 5.2 3.6 9.4 10 11 6.4-1.6 10-5.8 10-11V7l-10-5z" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5M12 16.2v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      formular-abzocke.de
+    </a>
+    <div>
+      <a class="navlink" href="/#faelle">Fälle</a>
+      <a class="navlink" href="/kontakt.html">Kontakt</a>
+      <a class="navlink" href="/impressum.html">Impressum</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap" style="padding-top:40px;max-width:600px;">
+  <h1 style="font-size:26px;">Kontakt</h1>
+  <p style="color:var(--muted);">
+    Sie haben einen ähnlichen Fall erlebt, möchten einen Hinweis geben, oder sind als betroffenes
+    Unternehmen mit einer Stellungnahme gemeint? Nutzen Sie das Formular unten.
+  </p>
+
+  <form id="contact-form" novalidate>
+    <div style="margin-bottom:16px;">
+      <label for="name" style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px;">Name</label>
+      <input type="text" id="name" name="name" required
+        style="width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:11px 13px;color:var(--text);font-family:var(--sans);font-size:14.5px;">
+    </div>
+    <div style="margin-bottom:16px;">
+      <label for="email" style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px;">E-Mail</label>
+      <input type="email" id="email" name="email" required
+        style="width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:11px 13px;color:var(--text);font-family:var(--sans);font-size:14.5px;">
+    </div>
+    <div style="margin-bottom:16px;">
+      <label for="message" style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px;">Nachricht</label>
+      <textarea id="message" name="message" rows="6" required
+        style="width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:11px 13px;color:var(--text);font-family:var(--sans);font-size:14.5px;resize:vertical;"></textarea>
+    </div>
+
+    <!-- Honeypot, für Menschen unsichtbar -->
+    <div style="position:absolute;left:-9999px;opacity:0;">
+      <label for="website">Website</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" id="submit-btn"
+      style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;border:none;cursor:pointer;font-weight:700;font-size:14.5px;background:var(--amber);color:#191308;">
+      Nachricht senden
+    </button>
+    <div id="form-status" style="font-family:var(--mono);font-size:13px;margin-top:12px;min-height:18px;color:var(--muted);"></div>
+  </form>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>formular-abzocke.de — unabhängige Verbraucheraufklärung, kein Rechtsberatungsangebot.</div>
+    <div class="links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const formLoadedAt = Date.now();
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
+  const btn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    statusEl.style.color = 'var(--muted)';
+    statusEl.textContent = 'Wird gesendet…';
+
+    const payload = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+      website: document.getElementById('website').value,
+      elapsed: Date.now() - formLoadedAt,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        statusEl.style.color = 'var(--green)';
+        statusEl.textContent = 'Danke, Ihre Nachricht wurde gesendet.';
+        form.reset();
+      } else {
+        statusEl.style.color = 'var(--red)';
+        statusEl.textContent = data.error || 'Es ist ein Fehler aufgetreten.';
+      }
+    } catch {
+      statusEl.style.color = 'var(--red)';
+      statusEl.textContent = 'Es ist ein Fehler aufgetreten. Bitte später erneut versuchen.';
+    }
+    btn.disabled = false;
+  });
+</script>
+
+</body>
+</html>
