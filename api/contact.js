@@ -127,7 +127,7 @@ module.exports = async (req, res) => {
       },
       body: JSON.stringify({
         from: 'formular-abzocke.de <noreply@pan21.com>',
-        to: 'haraldlinhart@gmail.com',
+        to: 'info@pan21.com',
         reply_to: email,
         subject: 'Kontaktanfrage formular-abzocke.de',
         html,
