@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://formular-abzocke.de/sitemap.xml
+Sitemap: https://www.formular-abzocke.de/sitemap-blog.xml
