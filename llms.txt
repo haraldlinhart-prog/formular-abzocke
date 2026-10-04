@@ -22,13 +22,14 @@ Formular, Branchenbuch-Abzocke, Widerruf Verbraucherrecht, PayPal Käuferschutz,
 
 ## Dokumentierte Fälle
 - Gewerbe-Online-Service.de / Phonemotion GmbH — Gewerbeabmeldung nicht weitergeleitet, 70 € über
-  PayPal-Käuferschutz zurückerstattet: https://formular-abzocke.de/faelle/phonemotion-gewerbe-online-service.html
+  PayPal-Käuferschutz zurückerstattet: https://www.formular-abzocke.de/faelle/phonemotion-gewerbe-online-service/
 
 ## Hinweis
 Diese Seite bietet keine Rechtsberatung. Betroffene Unternehmen können über das Kontaktformular eine
 Stellungnahme einreichen.
 
 ## Links
-- Hauptseite: https://formular-abzocke.de
-- Kontakt: https://formular-abzocke.de/kontakt.html
-- Impressum: https://formular-abzocke.de/impressum.html
+- Hauptseite: https://www.formular-abzocke.de
+- Kontakt: https://www.formular-abzocke.de/kontakt/
+- Ratgeber (Blog): https://www.formular-abzocke.de/blog/
+- Impressum: https://www.formular-abzocke.de/impressum/
