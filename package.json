@@ -1,0 +1,7 @@
+{
+  "name": "formular-abzocke",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/latest-articles.mjs html . index.html"
+  }
+}
